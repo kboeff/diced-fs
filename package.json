@@ -1,0 +1,35 @@
+{
+  "name": "diced-fs",
+  "version": "1.0.0",
+  "description": "Rating app using React",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.3",
+    "@babel/preset-env": "^7.2.3"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo: \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kboeff/diced-fs.git"
+  },
+  "keywords": [
+    "node",
+    "diced",
+    "socks",
+    "react"
+  ],
+  "author": "kbo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kboeff/diced-fs/issues"
+  },
+  "homepage": "https://github.com/kboeff/diced-fs#readme"
+}
