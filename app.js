@@ -10,7 +10,10 @@ dotenv.config({
 const logger = require('morgan');
 const path = require('path');
 const express = require('express');
-const routes = require('./routes/index');
+const routes = require('./routes');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
 
 // Express app setup
 const app = express();
@@ -24,6 +27,13 @@ app.set('view engine', 'pug');
 
 // serve static files from 'public'
 app.use(express.static(path.join(__dirname, './public')));
+
+// body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// cookie parser
+app.use(cookieParser());
 
 // use routes
 app.use('/', routes);
@@ -45,6 +55,4 @@ app.use((err, req, res, next) => {
   next();
 });
 
-module.exports = {
-  app,
-};
+module.exports = app;
