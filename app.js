@@ -13,10 +13,23 @@ const express = require('express');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const Bundler = require('parcel-bundler');
 
 
 // Express app setup
 const app = express();
+
+// use parcel bundler
+if (process.env.NODE_ENV !== 'production') {
+  const bundler = new Bundler('./src/index.js', {
+    outDir: 'public/js',
+    watch: true,
+  });
+  
+  bundler.bundle();
+  
+  app.use(bundler.middleware());
+}
 
 // logger
 app.use(logger('combined'));
