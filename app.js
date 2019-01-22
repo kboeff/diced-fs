@@ -20,6 +20,7 @@ const Bundler = require('parcel-bundler');
 const app = express();
 
 // use parcel bundler
+// DEBUG: Parcel throwing error seems to have trouble navigating the paths
 if (process.env.NODE_ENV !== 'production') {
   const bundler = new Bundler('./src/index.js', {
     outDir: 'public/js',
